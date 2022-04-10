@@ -1,0 +1,49 @@
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class DFS {
+	
+	private LinkedList<Integer> list[];
+	  private boolean got[];
+
+	  // Graph creation
+	 void Graph(int vertices) {
+	    list = new LinkedList[vertices];
+	    got = new boolean[vertices];
+
+	    for (int i = 0; i < vertices; i++)
+	      list[i] = new LinkedList<Integer>();
+	  }
+
+	  // Add edges
+	  void addEdge(int src, int dest) {
+	    list[src].add(dest);
+	  }
+
+	  // DFS algorithm
+	  void DFS(int v) {
+	    got[v] = true;
+	    System.out.print(v + " ");
+
+	    Iterator<Integer> late = list[v].listIterator();
+	    
+	    while (late.hasNext()) {
+	    	
+	      int p = late.next();
+	      if (!got[p])
+	        DFS(p);
+	    }
+	  }
+
+	  public static void main(String args[]) {
+	    DFS d = new DFS();
+	    d.Graph(4);
+
+	    d.addEdge(0, 1);
+	    d.addEdge(0, 2);
+	    d.addEdge(1, 2);
+	    d.addEdge(2, 3);
+
+	    d.DFS(2);
+	  }
+}
