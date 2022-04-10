@@ -1,0 +1,62 @@
+import java.util.LinkedList; 
+import java.util.Iterator;
+
+ 
+
+public class Tree {
+
+	private int n;
+	private LinkedList<Integer> graph[];
+	
+	void Graph(int n){
+		this.n = n;
+		this.graph = new LinkedList[n];
+		
+		for(int i=0;i<n;++i) {
+			this.graph[i] = new LinkedList<Integer>();
+		}
+		
+	}
+	void edges(int n,int a) {
+		graph[n].add(a);
+	}
+	
+	void Bfs(int b) {
+		
+		boolean got[] = new boolean[n];
+		
+		LinkedList<Integer> queue = new LinkedList<Integer>();
+		
+		got[b] = true;
+		queue.add(b);
+		
+		while (queue.size() !=0) {
+			b = queue.poll();
+			System.out.println(b + "");
+			
+			Iterator<Integer> x = graph[b].listIterator();
+			while(x.hasNext()) {
+				int y = x.next();
+				if(!got[y]) {
+					got[y] = true;
+					queue.add(y);
+				}
+			}
+			
+		}
+	}
+	
+	public static void main(String args[]) {
+	    Tree t = new Tree();
+	    t.Graph(6);
+
+	    t.edges(0, 4);
+	    t.edges(0, 3);
+	    t.edges(1, 2);
+	    t.edges(2, 0);
+	    t.edges(2, 3);
+	    t.edges(3, 5);
+
+	    t.Bfs(1);
+	  }
+}
