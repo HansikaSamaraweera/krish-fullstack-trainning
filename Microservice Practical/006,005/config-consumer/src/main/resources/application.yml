@@ -1,0 +1,6 @@
+server:
+  port: 8191
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8191
