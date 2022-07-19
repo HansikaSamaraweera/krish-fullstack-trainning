@@ -82,6 +82,32 @@ public class List {
 		}
 		
 	}
+	
+	boolean isPalindromeList(Link right)  
+    { 
+        Link left = first; 
+          
+        if (right == null) 
+            return true;  
+        
+        boolean pal = isPalindromeList(right.next); 
+        if (pal == false) 
+            return false; 
+   
+        boolean pal1 = (right.data == left.data); 
+   
+        left = left.next; 
+  
+        return pal1; 
+    } 
+   
+    
+    boolean isPalindrome(Link head)  
+    { 
+        boolean result = isPalindromeList(head); 
+        return result; 
+    } 
+  
   
 }
 
