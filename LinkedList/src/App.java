@@ -14,6 +14,22 @@ public class App {
 		
 		list.reverce();
 		
+		for (int i = 0; i < 6; i++)  
+	        { 
+			 	list.showLink();
+	            if (list.isPalindrome(list.first) != false)  
+	            { 
+	                System.out.println("Is Palindrome"); 
+	                System.out.println(""); 
+	            }  
+	            else 
+	            { 
+	                System.out.println("Not Palindrome"); 
+	                System.out.println(""); 
+	            } 
+	        } 
+		 }
+		
 		
 	}
 }
