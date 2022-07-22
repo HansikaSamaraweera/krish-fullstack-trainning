@@ -1,0 +1,58 @@
+
+public class WaterDrop {
+
+	public static void main(String[] args) {
+		 
+
+		int b = 100;
+		int up =0 ;
+		int left =0;
+		int right =0 ;
+
+		 
+		int [] [] water = new int[] [] {
+		      { 0, 0, 0, 0, 0, 0, 0 },
+		      { 1, 0, 0, 0, 0, 0, 0 },
+		      { 0, 0, 1, 1, 1, 0, 0 },
+		      { 0, 0, 0, 0, 0, 0, 0 },
+		      { 1, 1, 1, 0, 0, 1, 0 },
+		      { 0, 0, 0, 0, 0, 0, 1 },
+		      { 0, 0, 0, 0, 0, 0, 0 }
+		     
+		    } ;
+		    
+ 
+		   
+		    for (int column = 0; column < water[0].length; column++) {
+		        for (int row = 0; row < water.length; row++) {
+		        	
+
+		        	if(water[column][1] == 1) {
+	        			System.out.println(water[column][1] + "****************");
+	        		} 
+		        	
+		        	if(water[column][row] == 1) {
+		        		System.out.println(water[column][row]);
+		        		
+		        		if(column<7 && row <7) {
+		        			up = water[column-1][row];
+		        			left = water[column][row+1];
+//			        		right = water[column][row-1];
+		        		}
+		        		System.out.println(up);
+		        		System.out.println(left);
+		        		
+		        	}else {
+		        		
+		        	}
+		           
+		        }
+		        System.out.println("\n");
+		    }
+	 
+ 
+		    
+		    
+	}
+
+}
