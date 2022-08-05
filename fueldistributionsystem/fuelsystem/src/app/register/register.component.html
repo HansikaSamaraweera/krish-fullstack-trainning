@@ -1,0 +1,102 @@
+<div class="container-fluid bg-light">
+  <div class="container">
+
+
+  <div class="jumbotron">
+
+    <div class="card bg-info text-white">
+      <div class="card-body text-center">
+        <h1>Register</h1>
+      </div>
+    </div>
+
+  <div class="card mb-3">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img
+          src="https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp"
+          alt="Trendy Pants and Shoes"
+          class="img-fluid rounded-start"
+        />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Register</h5>
+
+
+          <div class="row">
+            <div class="col-md-7">
+              <div class="form-group">
+                <label class="bmd-label-floating">Id</label>
+                <input type="text" class="form-control" name="Id" [(ngModel)]="reg.id">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-7">
+              <div class="form-group">
+                <label class="bmd-label-floating">Name</label>
+                <input type="text" class="form-control" name="name" [(ngModel)]="reg.name">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-7">
+              <div class="form-group">
+                <label class="bmd-label-floating">Phone</label>
+                <input type="text" class="form-control" name="phone" [(ngModel)]="reg.phone">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-7">
+              <div class="form-group">
+                <label>Capacity</label>
+                <br>
+                <select class="form-control " data-style="select-with-transition"  [(ngModel)]="reg.capacity"  >
+                  <option ngDefaultControl>92</option>
+                  <option>66000</option>
+                  <option>33000</option>
+                  <option>130000</option>
+                </select>
+              </div>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-7">
+              <div class="form-group">
+                <label class="bmd-label-floating">email</label>
+                <input type="text" class="form-control" name="email" [(ngModel)]="reg.email">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-7">
+              <div class="form-group">
+                <label class="bmd-label-floating">Password</label>
+                <input type="text" class="form-control" name="password" [(ngModel)]="reg.password">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-7">
+              <div class="form-group">
+                <label class="bmd-label-floating">Address</label>
+                <input type="text" class="form-control" name="address" [(ngModel)]="reg.address">
+              </div>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary" (click)="onRegister()">Submit</button>
+            <div class="clearfix"></div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+  </div>
+</div>

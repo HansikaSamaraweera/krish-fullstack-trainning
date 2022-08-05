@@ -1,0 +1,61 @@
+<div class="container-fluid bg-light">
+  <div class="container">
+
+
+    <div class="jumbotron">
+
+      <div class="card bg-info text-white">
+        <div class="card-body text-center">
+          <h1>Order</h1>
+        </div>
+      </div>
+
+      <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-8">
+            <div class="card-body">
+
+              <div class="row">
+              <div class="col-md-7">
+                <div class="form-group">
+                  <label class="bmd-label-floating">Id</label>
+                  <input type="text" class="form-control" name="Id" [(ngModel)]="ord.id">
+                </div>
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="col-md-7">
+                <div class="form-group">
+                  <label>Type</label>
+                  <br>
+                  <select class="form-control " data-style="select-with-transition"  [(ngModel)]="ord.type"  >
+                    <option ngDefaultControl>92</option>
+                    <option>95</option>
+                    <option>diesel</option>
+                    <option>super diesel</option>
+                  </select>
+                </div>
+
+              </div>
+            </div>
+              <div class="row">
+                <div class="col-md-7">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Amount</label>
+                    <input type="text" class="form-control" name="amount" [(ngModel)]="ord.amount">
+                  </div>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary" (click)="onOrderCreated()">Submit</button>
+            <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</div>
