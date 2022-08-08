@@ -19,7 +19,7 @@
               <div class="col-md-7">
                 <div class="form-group">
                   <label class="bmd-label-floating">Id</label>
-                  <input type="text" class="form-control" name="Id" [(ngModel)]="ord.id">
+                  <input type="text" class="form-control" name="Id" required [(ngModel)]="ord.id">
                 </div>
               </div>
 
@@ -29,7 +29,7 @@
                 <div class="form-group">
                   <label>Type</label>
                   <br>
-                  <select class="form-control " data-style="select-with-transition"  [(ngModel)]="ord.type"  >
+                  <select class="form-control " data-style="select-with-transition" required [(ngModel)]="ord.type"  >
                     <option ngDefaultControl>92</option>
                     <option>95</option>
                     <option>diesel</option>
@@ -43,11 +43,19 @@
                 <div class="col-md-7">
                   <div class="form-group">
                     <label class="bmd-label-floating">Amount</label>
-                    <input type="text" class="form-control" name="amount" [(ngModel)]="ord.amount">
+                    <input type="number" class="form-control" name="amount" required [(ngModel)]="ord.amount">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-7">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Your Order Reference Id</label>
+                      <input class="form-control" type="text" placeholder="Your reference ID will show after add order" readonly [(ngModel)]="ord.orderId" >
+                    </div>
                   </div>
                 </div>
                 <br>
-                <button type="submit" class="btn btn-primary" (click)="onOrderCreated()">Submit</button>
+                <button type="submit" class="btn btn-primary" (click)="onOrderCreated()" >Submit</button>
             <div class="clearfix"></div>
             </div>
           </div>

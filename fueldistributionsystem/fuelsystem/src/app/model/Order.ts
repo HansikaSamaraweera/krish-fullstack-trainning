@@ -1,5 +1,6 @@
 export class Order{
   id: string;
   type:string;
-  amount:string
+  amount:number;
+  orderId: string;
 }

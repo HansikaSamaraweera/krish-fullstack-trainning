@@ -1,0 +1,52 @@
+<div class="container-fluid bg-light">
+  <div class="container">
+
+    <div class="jumbotron">
+
+      <div class="card bg-info text-white">
+        <div class="card-body text-center">
+          <h1>Report</h1>
+        </div>
+      </div>
+
+      <div class="card mb-3 mx-auto" >
+        <div class="row g-0">
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Order List</h5>
+
+              <table class="table mx-auto">
+                <thead>
+                <tr>
+                  <th scope="col">Order Id</th>
+                  <th scope="col">Type</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Day</th>
+                  <th scope="col">Available</th>
+                  <th scope="col">Id</th>
+                  <th scope="col">Dispatch</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let item of list">
+                  <td>{{item.id}}</td>
+                  <td>{{item.orderId}}</td>
+                  <td>{{item.type}}</td>
+                  <td>{{item.amount}}</td>
+                  <td>{{item.available}}</td>
+                  <td>{{item.day}}</td>
+                  <td><button  class="btn btn-success" rel="tooltip" type="button"  title="">Accept for dispatch <i  class="material-icons">add</i></button></td>
+                </tr>
+
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

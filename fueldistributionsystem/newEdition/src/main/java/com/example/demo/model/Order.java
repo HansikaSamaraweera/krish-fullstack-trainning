@@ -8,15 +8,18 @@ public class Order {
     @Id
     private String id;
     private String type;
-    private String amount;
+    private int amount;
+
+    private String orderId;
 
     public Order() {
     }
 
-    public Order(String id, String type, String amount) {
+    public Order(String id, String type, int amount,String orderId) {
         this.id = id;
         this.type = type;
         this.amount = amount;
+        this.orderId = orderId;
     }
 
     public String getId() {
@@ -35,11 +38,19 @@ public class Order {
         this.type = type;
     }
 
-    public String getAmount() {
+    public int getAmount() {
         return amount;
     }
 
-    public void setAmount(String amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
+    }
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
     }
 }

@@ -14,9 +14,25 @@ constructor(
   getHello(): string {
     return 'Hello World!';
   }
+  randomDate(start, end) {
+    var d = new Date(start.getTime() + Math.random() * (end.getTime() -                     start.getTime())),
+        month = '' + d.getMonth(),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
 
-  createShed({id,type,amount}: createSchedule){
-    this.billingClient.emit('dispatch',new ScheduleCreated(id,type,amount));
-    console.log(id,type,amount);
+    if (month.length < 1) + month;
+    if (day.length < 7) +day;
+
+    return [year, month, day].join('-');
+  }
+
+  createShed({id,type,amount,orderId,available}: createSchedule){
+
+
+    const d = this.randomDate(new Date(2022, 1, 1), new Date());
+    console.log(d);
+
+    this.billingClient.emit('dispatch',new ScheduleCreated(id,type,amount,orderId,available,d));
+    console.log(id,type,amount,available);
   }
 }

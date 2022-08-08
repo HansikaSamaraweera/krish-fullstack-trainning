@@ -10,42 +10,45 @@
         </div>
       </div>
 
-      <div class="card mb-3">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img
-              src="https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp"
-              alt="Trendy Pants and Shoes"
-              class="img-fluid rounded-start"
-            />
+
+          <div class="col-md-4 mx-auto">
+            <img src="https://as1.ftcdn.net/v2/jpg/03/46/83/96/1000_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" class="rounded-circle mx-auto" alt="Login" height="150px" width="150px">
           </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Register</h5>
+              <div class="card mb-3">
+                <div class="row g-0">
+                  <div class="col-md-8">
+                    <div class="card-body">
 
-              <form>
-                <div class="-form-control">
-                  <label class="form-label" for="form1">name</label>
-                  <input type="text" id="form1" class="form-control" />
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
-                <button type="submit" class="btn btn-primary" routerLink="/order">Submit</button>
-              </form>
+                      <div class="row">
+                        <div class="col-md-7">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Id</label>
+                            <input type="text" class="form-control" name="Id" required [(ngModel)]="login.id">
+                          </div>
+                        </div>
 
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-7">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Password</label>
+                            <input type="number" class="form-control" name="amount" required [(ngModel)]="login.password">
+                          </div>
+                        </div>
+
+                        <br>
+                        <button type="submit" class="btn btn-primary" (click)="onLogin()" >Submit</button>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
 
             </div>
           </div>
         </div>
-      </div>
 
-    </div>
-  </div>
-</div>
 

@@ -12,7 +12,7 @@ export class ConsumerService implements OnApplicationShutdown{
 
     
     async consume(topic: ConsumerSubscribeTopic, config:ConsumerRunConfig){
-        const consumer = this.kafka.consumer({groupId:'orderId'});
+        const consumer = this.kafka.consumer({groupId:'allo'});
         await consumer.connect();
         await consumer.subscribe(topic);
         await consumer.run(config);

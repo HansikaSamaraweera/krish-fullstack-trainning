@@ -4,16 +4,12 @@ package com.example.demo.controller;
 import com.example.demo.model.Order;
 import com.example.demo.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Optional;
 
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin()
 @RestController
 @RequestMapping("/order")
 public class OrderController {
@@ -39,6 +35,19 @@ public class OrderController {
     public Order addOrder(@RequestBody Order order){
         return orderService.addOrder(order);
     }
+
+    @GetMapping(value = "/search/{OrderId}")
+    public Optional<Order> searchByOrderId(@PathVariable String orderId){
+        System.out.println(orderId);
+        return orderService.getByOrderId(orderId);
+    }
+    @GetMapping("/getall")
+    public Iterable<Order> getAllOrders(){
+
+        return orderService.findAll();
+    }
+
+
 
 
 }

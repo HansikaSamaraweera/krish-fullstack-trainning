@@ -4,7 +4,7 @@ import {Order} from "../model/Order";
 import {environment} from "../../environments/environment";
 import {Station} from "../model/Station";
 
-const URL = '/OrderController'
+const URL = '/station'
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +15,9 @@ export class StationService{
 
   addstation(cust: Station) {
     return this.http.post<Station>(environment.backend_url + URL + '/add',cust);
-
+  }
+  getByIdAndPassword(id: string){
+    return this.http.get<Station>(environment.backend_url+ URL+'/login/'+id);
   }
 
 }

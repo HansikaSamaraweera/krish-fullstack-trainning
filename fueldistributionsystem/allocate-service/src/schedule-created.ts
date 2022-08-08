@@ -3,7 +3,9 @@ export class ScheduleCreated{
        
         public readonly id:string,
         public readonly type: string,
-        public readonly amount: string
+        public readonly amount: number,
+        public readonly orderId:string,
+        public readonly available: boolean
     ){}
 
     toString(){
@@ -11,7 +13,9 @@ export class ScheduleCreated{
              
             id: this.id,
             type: this.type,
-            amount: this.amount
+            amount: this.amount,
+            orderId:this.orderId,
+            available: this.available
         });
     }
 }

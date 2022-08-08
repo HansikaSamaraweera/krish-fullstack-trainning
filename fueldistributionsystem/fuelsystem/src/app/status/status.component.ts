@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Order} from "../model/Order";
+import {OrderService} from "../service/order.service";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-status',
@@ -7,9 +10,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatusComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient,private orderService:OrderService) { }
+
+  od: Order= new Order();
+  ans: Array<Order> = new Array
+  mo : Order = new Order();
+  ref:string
+  showref:string
 
   ngOnInit(): void {
   }
+
+  searchById(){
+    this.orderService.searchByOrderId(this.mo.orderId).subscribe((result) =>{
+      console.log(result);
+      if(result == null){
+       alert("Check the reference Id again!")
+      }else{
+      this.od = result;
+        if(this.od!=null){
+          this.showref = "Order has placed"
+        }
+      }
+    })
+  }
+
 
 }

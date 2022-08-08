@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @CrossOrigin
 @RestController
 @RequestMapping("/station")
@@ -19,6 +21,10 @@ public class StationController {
       return stationService.saveStation(station);
    }
 
+   @GetMapping(value = "/login/{id}")
+   public Optional<Station> getByIdAndPassword(@PathVariable String id){
+      return stationService.getByIdAndPassword(id);
+   }
 
 
 

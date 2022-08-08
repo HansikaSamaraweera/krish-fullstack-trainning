@@ -1,4 +1,5 @@
 import { Injectable, OnModuleInit } from "@nestjs/common";
+import { AppController } from "src/app.controller"; 
 import { ConsumerService } from "./Consumer.service";
 
 @Injectable()
@@ -6,6 +7,7 @@ export class GetData implements OnModuleInit{
     
     constructor(private readonly consumerService: ConsumerService){
     }
+    
     
     async onModuleInit() {
         await this.consumerService.consume(
@@ -17,9 +19,10 @@ export class GetData implements OnModuleInit{
                 topic: topic.toString(),
                 partition: partition.toString(),
               });
-            },
+              },
           },
         );
+
       }
 
 }

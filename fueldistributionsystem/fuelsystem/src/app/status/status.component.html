@@ -10,55 +10,33 @@
           <h1>Status</h1>
         </div>
       </div>
-
-      <div class="card mb-3">
-        <div class="row g-0">
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Status</h5>
-
-
-              <table class="table table-striped">
-                <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">First</th>
-                  <th scope="col">Last</th>
-                  <th scope="col">Handle</th>
-                  <button type="submit" class="btn btn-primary align-bottom">Confirm</button>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <button type="submit" class="btn btn-primary align-bottom">Confirm</button>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                  <button type="submit" class="btn btn-primary align-bottom">Confirm</button>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                  <button type="submit" class="btn btn-primary align-bottom">Confirm</button>
-                </tr>
-                </tbody>
-              </table>
-
-            </div>
+      <div class="row mx-auto">
+        <div class="col-md-7">
+          <div class="form-group">
+            <label class="bmd-label-floating">Reference ID</label>
+            <input type="text" class="form-control" name="name" placeholder="Enter reference id of your order" required [ngModel]="mo.orderId">
           </div>
         </div>
       </div>
 
-    </div>
+      <div class="row mx-auto">
+        <div class="col-md-7">
+          <button type="submit" class="btn btn-primary" (click)="searchById()">Search</button>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+
+      <div class="card mx-auto" style="width: 18rem;">
+        <div class="card-header">
+          Your Order
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{this.showref}}</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+      </div>
+
   </div>
 </div>
-
+</div>

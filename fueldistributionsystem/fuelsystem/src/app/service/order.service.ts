@@ -14,7 +14,9 @@ export class OrderService{
 
   addOrder(cust: Order) {
     return this.http.post<Order>(environment.backend_url + URL + '/add',cust);
-
   }
 
+  searchByOrderId(orderId: string){
+    return this.http.get<Order>(environment.backend_url+ URL+'/search/'+orderId);
+  }
 }

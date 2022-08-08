@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface StationRepository extends MongoRepository<Station,String> {
+    Iterable<Station> getByIdAndPassword(String id, String password);
 }

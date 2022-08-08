@@ -1,4 +1,5 @@
 import { Injectable, OnModuleInit } from "@nestjs/common";
+import { AppController } from "src/app.controller";
 import { ConsumerService } from "./Consumer.service";
 
 @Injectable()
@@ -17,6 +18,8 @@ export class GetData implements OnModuleInit{
                 topic: topic.toString(),
                 partition: partition.toString(),
               });
+              // this.appcontroller.createSchedule(JSON.parse(message.value.toString()));
+
             },
           },
         );
